@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1> List of Events</h1>
+    {% for event in events_list %}
+    <div>
+        {% if event.recurring == True %}
+        <b>
+        <ul>
+            <li>{{event.name}} </li>
+            <li>{{event.date}} </li>
+            <li>{{event.guests}} </li>
+            <li>{{event.room}} </li>
+            <li>{{event.description}} </li> 
+            <li style="background-color:Tomato;"> This is an Recurring Event!</li>  
+        </ul>
+        </b>
+        {% else %}
+        <ul>
+            <li>{{event.name}} </li>
+            <li>{{event.date}} </li>
+            <li>{{event.guests}} </li>
+            <li>{{event.room}} </li>
+            <li>{{event.description}} </li>  
+        </ul>
+        {% endif %}
+    </div>
+    
+    {% endfor %}
+
+{% endblock %}
